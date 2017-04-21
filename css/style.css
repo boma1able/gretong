@@ -1,0 +1,504 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-info-top {
+  background-color: #252525;
+}
+
+.top-info {
+  max-height: 30px;
+  background-color: #252525;
+}
+
+#main-menu-top {
+  padding: 0;
+}
+
+.navbar-right li a {
+  padding-right: 15px!important;
+}
+
+.top-menu .nav li a {
+  padding: 5px 25px 5px 0;
+  font-size: 12px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.top-menu .nav li a:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.phone {
+  padding-right: 8px;
+}
+
+.logo {
+  padding-top: 43px;
+  max-height: 85px;
+}
+
+.login {
+  float: left;
+}
+
+.login-btn {
+  padding: 6px 19px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-transform: uppercase;
+  margin-right: 16px;
+  font-size: .93em;
+  margin-left: -5px;
+}
+
+.login-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.reg-btn {
+  text-transform: uppercase;
+  padding: 6px 15px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0);
+  letter-spacing: -0.5px;
+}
+
+.reg-btn:hover {
+  border: 1px solid #ccc;
+}
+
+.login-menu {
+  display: inline-flex;
+  padding-top: 23px;
+  /* padding-right: 55px; */
+}
+
+.cart {
+  padding-top: 23px;
+  display: inline-block;
+  float: right;
+}
+
+.cart img {
+  width: 19px;
+  margin: 0 2px 5px;
+}
+
+.cart p {
+  display: inline-block;
+  margin-right: 13px;
+  letter-spacing: -0.2px;
+}
+
+.checkout {
+  padding: 5px 15px;
+  border: none;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff;
+  margin-right: -2px;
+}
+
+.checkout:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-form input[type='search'] {
+  position: relative;
+  width: 100%;
+  padding: 9px 17px;
+  border: 1px solid #ccc;
+}
+
+.src-btn {
+  position: absolute;
+  right: 6px;
+  bottom: 5px;
+  background-color: #fff;
+  border: 0;
+  font-size: 1.5em;
+}
+
+.search-header {
+  padding-top: 11px;
+  margin-left: -4px;
+}
+
+.big-menu {
+  background-color: #F5F5F5;
+}
+
+.big-menu li {
+  color: #3f3d3d;
+}
+
+.big-menu li:active {
+  color: #E4E4E4;
+}
+
+#main-menu {
+  padding: 0;
+  margin: 23px 0;
+}
+
+#main-menu ul li a {
+  padding: 10px 25px;
+  letter-spacing: -0.6px;
+}
+
+
+/* content */
+
+.new-arrivals {
+  position: relative;
+  background: url(../img/new-arrivals-thumb.jpg) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 320px;
+  text-align: center;
+}
+
+.new-arrivals h3,
+.tuxedo h3,
+.sweater h3 {
+  padding: 175px 0 20px;
+  margin: 0;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.new-arrivals p,
+.tuxedo p,
+.sweater p {
+  color: #ededed;
+  margin: 0;
+  padding-bottom: 24px;
+}
+
+.content-btn {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  padding: 3px 16px;
+}
+
+.tuxedo {
+  background: url(../img/tuxedo-thumb.jpg) no-repeat;
+  height: 320px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  text-align: center;
+}
+
+.sweater {
+  background: url(../img/sweater.jpg) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 250px;
+  text-align: center;
+}
+
+.sweater h3 {
+  padding: 120px 0 20px;
+  margin: 0;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.shoes {
+  position: relative;
+  background: url(../img/shoes.jpg) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 250px;
+  text-align: center;
+}
+
+.shoes h5,
+.glasses h5,
+.watches h5 {
+  margin: 0;
+  padding-top: 210px;
+  padding-right: 115px;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3em;
+}
+
+.arrow-right img {
+  position: absolute;
+  width: 30px;
+  right: 20px;
+  bottom: 23px;
+}
+
+.glasses {
+  position: relative;
+  background: url(../img/glasses.jpg) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 250px;
+  text-align: center;
+}
+
+.watches {
+  position: relative;
+  background: url(../img/watch.jpg) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 250px;
+  text-align: center;
+}
+
+.t-short {
+  position: relative;
+  background: url(../img/t-short.jpg) no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 250px;
+  text-align: center;
+}
+
+.t-short h3 {
+  padding: 145px 0 20px;
+  margin: 0;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+
+/* spesial area */
+
+.sec-spesial {
+  position: relative;
+  border-top: 1px solid #e8e8e8;
+  margin: 0 15px;
+  font-family: 'Playfair Display', serif;
+  margin-top: 60px;
+  padding-top: 60px;
+}
+
+.sec-spesial h2 {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  margin-left: -83px;
+  font-size: 1.5em;
+  display: inline-block;
+  border: 1px solid #e8e8e8;
+  padding: 10px;
+  color: #555;
+  background-color: #fff;
+}
+
+.img-item1 {
+  position: relative;
+  background: url(../img/1.jpg) no-repeat;
+  height: 210px;
+  text-align: center;
+}
+
+.img-item2 {
+  position: relative;
+  background: url(../img/2.jpg) no-repeat;
+  height: 210px;
+  text-align: center;
+}
+
+.img-item3 {
+  position: relative;
+  background: url(../img/3.jpg) no-repeat;
+  height: 210px;
+  text-align: center;
+}
+
+.img-item4 {
+  position: relative;
+  background: url(../img/4.jpg) no-repeat;
+  height: 210px;
+  text-align: center;
+}
+
+.bottom-item {
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  width: 220px;
+  height: 80px;
+  text-align: center;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.bottom-item div {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.img-item1,
+.img-item2,
+.img-item3,
+.img-item4 {
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.img-item1 h3,
+.img-item2 h3,
+.img-item3 h3,
+.img-item4 h3 {
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  margin: 0 auto;
+}
+
+
+/* footer */
+
+.footer {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  height: 80px;
+  margin: 70px 0 50px;
+}
+
+.social-bottom ul li {
+  float: left;
+  list-style-type: none;
+}
+
+.social-bottom {
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.social-bottom ul {
+  padding: 0;
+}
+
+.social-bottom ul li a {
+  color: #000;
+  font-size: 2em;
+  padding-right: 8px;
+}
+
+.social-bottom h4 {
+  margin: 0;
+  float: left;
+  padding-right: 25px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 10px;
+  margin-left: 15px;
+  font-size: 1.2em;
+}
+
+.widgets-area {
+  height: 290px;
+}
+
+.sub-form {
+  display: inline;
+  float: right;
+  padding-top: 20px;
+  margin-right: 15px;
+}
+
+.sub-form input[type='email'] {
+  padding: 8px 28px;
+  width: 355px;
+}
+
+.sub-btn {
+  padding: 10px 33px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.widgets-area h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1em;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.widgets-area ul {
+  padding: 0;
+}
+
+.widgets-area ul li {
+  list-style-type: none;
+  line-height: 26px;
+}
+
+.widgets-area ul li a {
+  color: #555;
+  font-family: 'Roboto', sans-serif;
+}
+
+.stores {
+  float: left;
+}
+
+span2 {
+  background-color: #ccc;
+  padding: 5px 25px;
+  font-size: .9em;
+  margin-right: 10px;
+}
+
+span3 {
+  border: 1px solid #ccc;
+  padding: 5px 25px;
+  font-size: .9em;
+}
+
+.str {
+  display: block;
+}
+
+.str h4 {
+  margin-right: 35px;
+}
+
+.deep-botton {
+  padding-bottom: 50px;
+}
+
+.overlay {
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  height: 51%;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0));
+  z-index: 0;
+}

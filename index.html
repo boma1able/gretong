@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Online store</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto:300" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <section class="top-info">
+    <div class="container">
+      <div class="row">
+        <div class="top-menu">
+          <nav class="navbar navbar-info-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+
+              <div class="collapse navbar-collapse" id="main-menu-top">
+                <ul class="nav navbar-nav">
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Delivery Information</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="phone"><i class="fa fa-phone" aria-hidden="true"></i></span>Call us : 032 2352 782</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="logo"><img src="img/logo.png" alt="logo"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="div">
+          <div class="login-menu">
+            <div class="login">
+              <button type="button" class="login-btn" data-toggle="modal" data-target="#myModal">
+              login
+              </button>
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Please login</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="login-form">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn">Login</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="register">
+              <button type="button" class="reg-btn" data-toggle="modal" data-target="#myModal">
+              register
+              </button>
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Please login</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="login-form">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn">Login</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart">
+            <img src="img/cart.png" alt="cart">
+            <p>My Cart ( 0 ) : $0</p>
+            <button class="checkout" type="submit">CHECKOUT</button>
+          </div>
+        </div>
+
+        <div class="search-header">
+          <div class="search-form">
+            <input type="search" placeholder="Search">
+            <button class="src-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+
+      <div class="collapse navbar-collapse" id="main-menu">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">home<span class="sr-only">(current)</span></a></li>
+          <li><a href="#">new arrivals</a></li>
+          <li><a href="#">tuxedo</a></li>
+          <li><a href="#">sweater</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">glasses</a></li>
+          <li><a href="#">t-shirt</a></li>
+          <li><a href="#">watches</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--CONTENT-->
+  <div class="grid">
+    <div class="grid-item grid-item--width2 grid-item--height2">
+      <div class="new-arrivals">
+        
+        <h3>NEW ARRIVALS</h3>
+        <p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
+        <button class="content-btn">
+            take a look
+          </button>
+          <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="grid-item grid-item--width2 grid-item--height2">
+      <div class="tuxedo">
+        <div class="overlay"></div>
+        <h3>TOXEDO</h3>
+        <p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
+        <button class="content-btn">
+            take a look
+          </button>
+      </div>
+    </div>
+    <div class="grid-item grid-item--width3 grid-item--height3">
+      <div class="sweater">
+        <div class="overlay"></div>
+        <h3>SWEATER</h3>
+        <p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
+        <button class="content-btn">
+            take a look
+          </button>
+      </div>
+    </div>
+    <div class="grid-item grid-item--width4 grid-item--height4">
+      <div class="shoes">
+        <div class="overlay"></div>
+        <h5>Trekking Shoes</h5>
+        <div class="arrow-right"><img src="img/arrow-right.png" alt=""></div>
+      </div>
+    </div>
+    <div class="grid-item grid-item--width4 grid-item--height3">
+      <div class="glasses">
+        <div class="overlay"></div>
+        <h5>Casual Glasses</h5>
+        <div class="arrow-right"><img src="img/arrow-right.png" alt=""></div>
+      </div>
+    </div>
+    <div class="grid-item grid-item--width5 grid-item--height3">
+      <div class="t-short">
+        <div class="overlay"></div>
+        <h3>fresh look t-short</h3>
+        <button class="content-btn">
+            shop now
+          </button>
+      </div>
+    </div>
+    <div class="grid-item grid-item--width4 grid-item--height3">
+      <div class="watches">
+        <div class="overlay"></div>
+        <h5>Elegant Watches</h5>
+        <div class="arrow-right"><img src="img/arrow-right.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="sec-spesial">
+        <h2>Spesial Offers</h2>
+        <div class="grid">
+          <div class="grid-item grid-item--width6 grid-item--height6">
+            <div class="spesial1">
+              <div class="overlay2"></div>
+              <div class="img-item1">
+                <h3>new</h3>
+              </div>
+              <div class="bottom-item">
+                <div>Lorem ipsum dolor <br> ONLY $50.00
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item grid-item--width6 grid-item--height6">
+            <div class="spesial1">
+              <div class="overlay2"></div>
+              <div class="img-item2">
+                <h3>new</h3>
+              </div>
+              <div class="bottom-item">
+                <div>Lorem ipsum dolor <br> ONLY $60.00
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item grid-item--width6 grid-item--height6">
+            <div class="spesial1">
+              <div class="overlay2"></div>
+              <div class="img-item3">
+                <h3>new</h3>
+              </div>
+              <div class="bottom-item">
+                <div>Lorem ipsum dolor <br> ONLY $23.30
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item grid-item--width6 grid-item--height6">
+            <div class="spesial1">
+              <div class="overlay2"></div>
+              <div class="img-item4">
+                <h3>new</h3>
+              </div>
+              <div class="bottom-item">
+                <div>Lorem ipsum dolor <br> ONLY $10.60
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <section class="footer">
+
+    <div class="container">
+      <div class="row">
+        <div class="social-bottom">
+          <ul>
+            <h4>follow us on</h4>
+            <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="sub-form">
+          <input type="email" placeholder="Enter your email to join our newsletter">
+          <button class="sub-btn" type="submit">JOIN</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="widgets-area">
+          <div class="col-md-2">
+            <h4>CUSTOMER CARE</h4>
+            <ul>
+              <li><a href="">Help Center</a></li>
+              <li><a href="">FAQ</a></li>
+              <li><a href="">How to buy</a></li>
+              <li><a href="">Delivery</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h4>ABOUT US</h4>
+            <ul>
+              <li><a href="">Our Stories</a></li>
+              <li><a href="">Press</a></li>
+              <li><a href="">Career</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h4>MY ACCOUNT</h4>
+            <ul>
+              <li><a href="">Login</a></li>
+              <li><a href="">My Cart</a></li>
+              <li><a href="">Order History</a></li>
+              <li><a href="">Payment</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="str">
+              <h4 class="stores">OUR STORES</h4>
+              <span2>SOLO</span2>
+              <span3>BOGOR</span3>
+            </div>
+            <div class="clearfix"></div>
+            <ul>
+              <li><a href=""><i class="fa fa-map-marker" aria-hidden="true"></i> Jl. Haji Muhidin, Blok G no.69</a></li>
+              <li><a href=""><i class="fa fa-phone" aria-hidden="true"></i> 025-2839341</a></li>
+              <li><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i>
+ solo@gretong.com</a></li>
+            </ul>
+          </div>
+          
+          
+        </div>
+        <div class="deep-botton">
+          <p>&copy; 2015 Gretongan</p>
+          <p>Terms & Condition</p>
+          <p>Privacy Policy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/813411220b.js"></script>
+  <!--  <script src="js/menu.js"></script>-->
+
+  <script>
+    $('.grid').masonry({
+      itemSelector: '.grid-item',
+      columnWidth: 10,
+      gutter: 20
+    });
+
+  </script>
+</body>
+
+</html>
