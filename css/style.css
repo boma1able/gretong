@@ -1,7 +1,13 @@
 body {
   font-family: 'Roboto', sans-serif;
+  outline: none;
 }
-
+a:hover{
+  text-decoration: none;
+}
+.new-arrivals:hover{
+  background-color: #fff;
+}
 .navbar-info-top {
   background-color: #252525;
 }
@@ -51,11 +57,13 @@ body {
   margin-right: 16px;
   font-size: .93em;
   margin-left: -5px;
+  transition: all .3s ease-in-out;
 }
 
 .login-btn:hover {
   background-color: #000;
   color: #fff;
+  transition: all .3s ease-in-out;
 }
 
 .modal-content {
@@ -68,10 +76,12 @@ body {
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid rgba(255, 255, 255, 0);
   letter-spacing: -0.5px;
+  transition: all .3s ease-in-out;
 }
 
 .reg-btn:hover {
   border: 1px solid #ccc;
+  transition: all .3s ease-in-out;
 }
 
 .login-menu {
@@ -104,12 +114,14 @@ body {
   background-color: #000;
   border: 1px solid #fff;
   margin-right: -2px;
+  transition: all .3s ease-in-out;
 }
 
 .checkout:hover {
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
+  transition: all .3s ease-in-out;
 }
 
 .search-form {
@@ -230,14 +242,21 @@ body {
   background-size: cover;
   height: 250px;
   text-align: center;
+  transition: all .3s ease-in;
+}
+.shoes:hover {
+  transform: rotate(-5deg) scale(1.1);
+  transition: all .3s ease-in;
+  overflow: hidden;
 }
 
 .shoes h5,
 .glasses h5,
 .watches h5 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   margin: 0;
-  padding-top: 210px;
-  padding-right: 115px;
   color: #fff;
   font-family: 'Playfair Display', serif;
   font-size: 1.3em;
@@ -419,7 +438,7 @@ body {
 }
 
 .widgets-area {
-  height: 290px;
+  height: 200px;
 }
 
 .sub-form {
@@ -430,17 +449,27 @@ body {
 }
 
 .sub-form input[type='email'] {
-  padding: 8px 28px;
+  padding: 9px 28px;
   width: 355px;
+  border: 1px solid #ccc;
 }
-
+.sub-form input[type='email']:focus{
+  outline: none;
+}
 .sub-btn {
-  padding: 10px 33px;
+  padding: 9px 32px;
   background-color: #000;
   color: #fff;
   border: none;
+  border: 1px solid #000;
+  transition: all .2s ease-in;
 }
-
+.sub-btn:hover{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  transition: all .2s ease-in;
+}
 .widgets-area h4 {
   font-family: 'Playfair Display', serif;
   font-size: 1em;
@@ -490,7 +519,16 @@ span3 {
 .deep-botton {
   padding-bottom: 50px;
 }
-
+.deep-botton p{
+  display: block;
+  float: left;
+}
+.deep-botton p:first-child{
+  padding-right: 65px;
+}
+.deep-botton p:nth-child(2){
+  padding-right: 28px;
+}
 .overlay {
   position: absolute;
   opacity: 1;
