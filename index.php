@@ -1,79 +1,377 @@
-<?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package understrap
- */
 
-get_header();
+<?php get_header();?>
 
-$container   = get_theme_mod( 'understrap_container_type' );
-$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
-?>
+<!--CONTENT-->
+<div class="grid">
+	<div class="grid-item grid-item--width2 grid-item--height2">
 
-<?php if ( is_front_page() && is_home() ) : ?>
-	<?php get_template_part( 'global-templates/hero', 'none' ); ?>
-<?php endif; ?>
+	<?php
+		$taxonomyName = "product_cat";
+		$prod_categories = get_terms($taxonomyName, array(
+			'orderby'=> 'id',
+			'order' => 'ASC',
+			'hide_empty' => 1,
+			'number' => 1
+		));
 
-<div class="wrapper" id="wrapper-index">
+		foreach( $prod_categories as $prod_cat ) :
+			if ( $prod_cat->parent != 0 )
+				continue;
+			$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
+			$cat_thumb_url = wp_get_attachment_image_src( $cat_thumb_id, 'thumbnail-size' )[0];
+			$term_link = get_term_link( $prod_cat, 'product_cat' );
+			?>
 
-	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
+			<div class="new-arrivals">
+				<div class="overlay"></div>
+				<img src="<?php echo $cat_thumb_url; ?>" alt="cat-img" />
+				<div class="info-top">
+					<h3><a class="button" href="<?php echo $term_link; ?>"> <?php echo $prod_cat->name; ?> </a></h3>
+					<p><?php echo $prod_cat->description; ?></p>
+					<a class="content-btn"  href="<?php echo $term_link; ?>">
+						take a look
+					</a>
+				</div>
+			</div>
 
-		<div class="row">
 
-			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
+		<?php endforeach;
+		wp_reset_query();
 
-			<main class="site-main" id="main">
+		?>
 
-				<?php if ( have_posts() ) : ?>
+	</div>
+	<div class="grid-item grid-item--width2 grid-item--height2">
+		<?php
+		$taxonomyName = "product_cat";
+		$prod_categories = get_terms($taxonomyName, array(
+			'orderby'=> 'id',
+			'order' => 'ASC',
+			'hide_empty' => 1,
+			'number' => 1,
+			'offset' => 1
+		));
 
-					<?php /* Start the Loop */ ?>
+		foreach( $prod_categories as $prod_cat ) :
+			if ( $prod_cat->parent != 0 )
+				continue;
+			$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
+			$cat_thumb_url = wp_get_attachment_image_src( $cat_thumb_id, 'thumbnail-size' )[0];
+			$term_link = get_term_link( $prod_cat, 'product_cat' );
+			?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+			<div class="tuxedo">
+				<div class="overlay"></div>
+				<img src="<?php echo $cat_thumb_url; ?>" alt="cat-img" />
+				<div class="info-top">
+					<h3><a class="button" href="<?php echo $term_link; ?>"> <?php echo $prod_cat->name; ?> </a></h3>
+					<p><?php echo $prod_cat->description; ?></p>
+					<a class="content-btn"  href="<?php echo $term_link; ?>">
+						take a look
+					</a>
+				</div>
+			</div>
 
-						<?php
 
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
-						?>
+		<?php endforeach;
+		wp_reset_query();
 
-					<?php endwhile; ?>
+		?>
+	</div>
+	<div class="grid-item grid-item--width3 grid-item--height3">
+		<?php
+		$taxonomyName = "product_cat";
+		$prod_categories = get_terms($taxonomyName, array(
+			'orderby'=> 'id',
+			'order' => 'ASC',
+			'hide_empty' => 1,
+			'number' => 1,
+			'offset' => 2
+		));
 
-				<?php else : ?>
+		foreach( $prod_categories as $prod_cat ) :
+			if ( $prod_cat->parent != 0 )
+				continue;
+			$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
+			$cat_thumb_url = wp_get_attachment_image_src( $cat_thumb_id, 'thumbnail-size' )[0];
+			$term_link = get_term_link( $prod_cat, 'product_cat' );
+			?>
 
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+			<div class="sweater">
+				<div class="overlay"></div>
+				<img src="<?php echo $cat_thumb_url; ?>" alt="cat-img" />
+				<div class="info-cat">
+					<h3><a class="button" href="<?php echo $term_link; ?>"> <?php echo $prod_cat->name; ?> </a></h3>
+					<p><?php echo $prod_cat->description; ?></p>
+					<a class="content-btn"  href="<?php echo $term_link; ?>">
+						take a look
+					</a>
+				</div>
+			</div>
+		<?php endforeach;
+		wp_reset_query();
 
-				<?php endif; ?>
+		?>
+	</div>
+	<div class="grid-item grid-item--width4 grid-item--height4">
+		<?php
+		$taxonomyName = "product_cat";
+		$prod_categories = get_terms($taxonomyName, array(
+			'orderby'=> 'id',
+			'order' => 'ASC',
+			'hide_empty' => 1,
+			'number' => 1,
+			'offset' => 3
+		));
 
-			</main><!-- #main -->
+		foreach( $prod_categories as $prod_cat ) :
+			if ( $prod_cat->parent != 0 )
+				continue;
+			$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
+			$cat_thumb_url = wp_get_attachment_image_src( $cat_thumb_id, 'thumbnail-size' )[0];
+			$term_link = get_term_link( $prod_cat, 'product_cat' );
+			?>
 
-			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<div class="shoes">
+				<div class="overlay"></div>
+				<img src="<?php echo $cat_thumb_url; ?>" alt="cat-img" />
+				<div class="info-min">
+					<a class="button" href="<?php echo $term_link; ?>">
+						<h5><?php echo $prod_cat->description; ?></h5>
+						<div class="arrow-right"><img src="<?php echo home_url('/wp-content/themes/shop/', 'http');?>img/arrow-right.png" alt=""></div>
+					</a>
 
-		</div><!-- #primary -->
 
-		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
+				</div>
+			</div>
+		<?php endforeach;
+		wp_reset_query();
 
-			<?php get_sidebar( 'right' ); ?>
+		?>
+	</div>
+	<div class="grid-item grid-item--width4 grid-item--height3">
+		<?php
+		$taxonomyName = "product_cat";
+		$prod_categories = get_terms($taxonomyName, array(
+			'orderby'=> 'id',
+			'order' => 'ASC',
+			'hide_empty' => 1,
+			'number' => 1,
+			'offset' => 4
+		));
 
-		<?php endif; ?>
+		foreach( $prod_categories as $prod_cat ) :
+			if ( $prod_cat->parent != 0 )
+				continue;
+			$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
+			$cat_thumb_url = wp_get_attachment_image_src( $cat_thumb_id, 'thumbnail-size' )[0];
+			$term_link = get_term_link( $prod_cat, 'product_cat' );
+			?>
 
-	</div><!-- .row -->
+			<div class="glasses">
+				<div class="overlay"></div>
+				<img src="<?php echo $cat_thumb_url; ?>" alt="cat-img" />
+				<div class="info-min">
+					<a class="button" href="<?php echo $term_link; ?>">
+						<h5><?php echo $prod_cat->description; ?></h5>
+						<div class="arrow-right"><img src="<?php echo home_url('/wp-content/themes/shop/', 'http');?>img/arrow-right.png" alt=""></div>
+					</a>
 
-</div><!-- Container end -->
 
-</div><!-- Wrapper end -->
+				</div>
+			</div>
+		<?php endforeach;
+		wp_reset_query();
 
-<?php get_footer(); ?>
+		?>
+	</div>
+	<div class="grid-item grid-item--width5 grid-item--height3">
+		<?php
+		$taxonomyName = "product_cat";
+		$prod_categories = get_terms($taxonomyName, array(
+			'orderby'=> 'id',
+			'order' => 'ASC',
+			'hide_empty' => 1,
+			'number' => 1,
+			'offset' => 5
+		));
+
+		foreach( $prod_categories as $prod_cat ) :
+			if ( $prod_cat->parent != 0 )
+				continue;
+			$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
+			$cat_thumb_url = wp_get_attachment_image_src( $cat_thumb_id, 'thumbnail-size' )[0];
+			$term_link = get_term_link( $prod_cat, 'product_cat' );
+			?>
+
+			<div class="t-shirt">
+				<div class="overlay"></div>
+				<img src="<?php echo $cat_thumb_url; ?>" alt="cat-img" />
+				<div class="info-top">
+					<h3><a class="button" href="<?php echo $term_link; ?>"> <?php echo $prod_cat->description; ?> </a></h3>
+					<a class="content-btn"  href="<?php echo $term_link; ?>">
+						shop now
+					</a>
+				</div>
+			</div>
+
+
+		<?php endforeach;
+		wp_reset_query();
+
+		?>
+	</div>
+	<div class="grid-item grid-item--width4 grid-item--height3">
+		<?php
+		$taxonomyName = "product_cat";
+		$prod_categories = get_terms($taxonomyName, array(
+			'orderby'=> 'id',
+			'order' => 'ASC',
+			'hide_empty' => 1,
+			'number' => 1,
+			'offset' => 6
+		));
+
+		foreach( $prod_categories as $prod_cat ) :
+			if ( $prod_cat->parent != 0 )
+				continue;
+			$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
+			$cat_thumb_url = wp_get_attachment_image_src( $cat_thumb_id, 'thumbnail-size' )[0];
+			$term_link = get_term_link( $prod_cat, 'product_cat' );
+			?>
+
+			<div class="watches">
+				<div class="overlay"></div>
+				<img src="<?php echo $cat_thumb_url; ?>" alt="cat-img" />
+				<div class="info-min">
+					<a class="button" href="<?php echo $term_link; ?>">
+						<h5><?php echo $prod_cat->description; ?></h5>
+						<div class="arrow-right"><img src="<?php echo home_url('/wp-content/themes/shop/', 'http');?>img/arrow-right.png" alt=""></div>
+					</a>
+
+
+				</div>
+			</div>
+		<?php endforeach;
+		wp_reset_query();
+
+		?>
+	</div>
+</div>
+</div>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="sec-spesial">
+			<h2>Spesial Offers</h2>
+			<div class="grid">
+				<div class="grid-item grid-item--width6 grid-item--height6">
+					<div class="spesial1">
+
+<!--								--><?php
+//								$args = array(
+//									'post_type' => 'product',
+//									'stock' => 1,
+//									'posts_per_page' => 1,
+//									'orderby' =>'date',
+//									'order' => 'DESC'
+//								);
+//
+//								$loop = new WP_Query( $args );
+//								while ( $loop->have_posts() ) : $loop->the_post();
+//									global $product;
+//									?>
+<!---->
+<!--										<a id="id---><?php //the_id(); ?><!--" href="--><?php //the_permalink(); ?><!--" title="--><?php //the_title(); ?><!--">-->
+<!--											--><?php //if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="220px" height="210px" />'; ?>
+<!--											<h3>--><?php //the_title(); ?><!--</h3>-->
+<!--											<span class="price">--><?php //echo $product->get_price_html(); ?><!--</span>-->
+<!--										</a>-->
+<!--										--><?php //woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
+<!---->
+<!--								--><?php //endwhile; ?>
+<!--								--><?php //wp_reset_query(); ?>
+<!---->
+<!--						--><?php
+
+
+//						$featured_query = new WP_Query( $args );
+//
+//						if ($featured_query->have_posts()) :
+//
+//							while ($featured_query->have_posts()) :
+//
+//								$featured_query->the_post();
+//
+//								$product = get_product( $featured_query->post->ID );  ?>
+<!---->
+<!--								--><?php
+//
+//								?>
+<!---->
+<!---->
+<!--							--><?php //endwhile; ?>
+<!---->
+<!--						--><?php //endif; ?>
+<!---->
+<!--						--><?php //wp_reset_query(); // Remember to reset
+//						?>
+
+						<div class="overlay2"></div>
+						<div class="img-item1">
+							<h3>new</h3>
+						</div>
+						<div class="bottom-item">
+							<div>Lorem ipsum dolor <br> ONLY $50.00
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-item--width6 grid-item--height6">
+					<div class="spesial1">
+						<div class="overlay2"></div>
+						<div class="img-item2">
+							<h3>new</h3>
+						</div>
+						<div class="bottom-item">
+							<div>Lorem ipsum dolor <br> ONLY $60.00
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-item--width6 grid-item--height6">
+					<div class="spesial1">
+						<div class="overlay2"></div>
+						<div class="img-item3">
+							<h3>new</h3>
+						</div>
+						<div class="bottom-item">
+							<div>Lorem ipsum dolor <br> ONLY $23.30
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-item--width6 grid-item--height6">
+					<div class="spesial1">
+						<div class="overlay2"></div>
+						<div class="img-item4">
+							<h3>new</h3>
+						</div>
+						<div class="bottom-item">
+							<div>Lorem ipsum dolor <br> ONLY $10.60
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</div>
+
+<?php get_footer();?>

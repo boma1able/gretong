@@ -1,50 +1,36 @@
 <?php
 /**
- * The template for displaying all woocommerce pages.
+ * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
+ * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * @package understrap
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package gretong
  */
 
-get_header();
+get_header(); ?>
 
-$container   = get_theme_mod( 'understrap_container_type' );
-$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-?>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
 
-<div class="wrapper" id="woocommerce-wrapper">
+					<div class="single-cat-prod">
+						<?php woocommerce_content(); ?>
+					</div>
+					</div>
+				</div>
+			</div>
 
-	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-		<div class="row">
-
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check', 'none' ); ?>
-
-			<main class="site-main" id="main">
-
-				<?php woocommerce_content(); ?>
-
-			</main><!-- #main -->
-
-		</div><!-- #primary -->
-
-		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
-
-			<?php get_sidebar( 'right' ); ?>
-
-		<?php endif; ?>
-
-	</div><!-- .row -->
-
-</div><!-- Container end -->
-
-</div><!-- Wrapper end -->
-
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

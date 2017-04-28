@@ -1,82 +1,147 @@
-<?php
-/**
- * The header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package understrap
- */
-
-$container = get_theme_mod( 'understrap_container_type' );
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php wp_head(); ?>
+
+	<title><? bloginfo();?></title>
+
+
+	<?php wp_head();?>
 </head>
 
 <body <?php body_class(); ?>>
 
-<div class="hfeed site" id="page">
+<div id="page-preloader" class="bg-preloader">
+	<div class="wrapper">
+		<img src="<?php echo home_url('/wp-content/themes/shop/', 'http');?>img/preload.gif" alt="">
+	</div>
+</div>
 
-	<!-- ******************* The Navbar Area ******************* -->
-	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
+<section class="top-info">
+	<div class="container">
+		<div class="row">
+			<div class="top-menu">
+				<nav class="navbar navbar-info-top">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
 
-		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content',
-		'understrap' ); ?></a>
+						<div class="collapse navbar-collapse" id="main-menu-top">
+							<ul class="nav navbar-nav">
+								<li><a href="#">Help</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">Delivery Information</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="phone"><i class="fa fa-phone" aria-hidden="true"></i></span>Call us : 032 2352 782</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
 
-		<nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse">
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo home_url('/wp-content/themes/shop/', 'http');?>img/logo.png" alt="logo"></a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="div">
+				<div class="login-menu">
+					<div class="login">
+						<button type="button" class="login-btn" data-toggle="modal" data-target="#myModal">
+							login
+						</button>
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="myModalLabel">Please login</h4>
+									</div>
+									<div class="modal-body">
+											<?php wp_login_form( $args ); ?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-		<?php if ( 'container' == $container ) : ?>
-			<div class="container">
-		<?php endif; ?>
+					<div class="register">
+						<button type="button" class="reg-btn" data-toggle="modal" data-target="#myModal">
+							register
+						</button>
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="myModalLabel">Please login</h4>
+									</div>
+									<div class="modal-body">
+										<?php wp_login_form( $args ); ?>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn" data-dismiss="modal">Close</button>
+										<button type="button" class="btn">Login1</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
 
-					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
 
-						<?php if ( is_front_page() && is_home() ) : ?>
 
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-							
-						<?php else : ?>
+				<div class="cart-top">
+					<img src="<?php echo home_url('/wp-content/themes/shop/', 'http');?>img/cart.png" alt="cart">
+					<a class="cart-contents" >My Cart (<?php echo sprintf ( _n( '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>) : <?php echo WC()->cart->get_cart_total(); ?></a>
+					<a class="checkout-btn" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>" type="submit">CHECKOUT</a>
+				</div>
+			</div>
 
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						
-						<?php endif; ?>
-						
-					
-					<?php } else {
-						the_custom_logo();
-					} ?><!-- end custom logo -->
+			<div class="search-header">
+				<div class="search-form">
+					<input type="search" placeholder="Search">
+					<button class="src-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+			</div>
 
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'walker'          => new WP_Bootstrap_Navwalker(),
-					)
-				); ?>
-			<?php if ( 'container' == $container ) : ?>
-			</div><!-- .container -->
-			<?php endif; ?>
+		</div>
+	</div>
+</div>
 
-		</nav><!-- .site-navigation -->
+<nav class="navbar navbar-default">
+	<div class="container">
 
-	</div><!-- .wrapper-navbar end -->
+			<?php
+			wp_nav_menu( array(
+				'theme_location'  => 'menu-cat',
+				'menu'            => 'navbar navbar-default',
+				'container'       => 'div',
+				'container_class' => 'collapse navbar-collapse',
+				'container_id'    => 'main-menu',
+				'menu_class'      => 'nav navbar-nav',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>'
+			) );
+			?>
+	</div>
+</nav>

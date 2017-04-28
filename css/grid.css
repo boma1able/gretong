@@ -26,6 +26,7 @@
   height: 120px;
   float: left;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .grid-item--width2 {

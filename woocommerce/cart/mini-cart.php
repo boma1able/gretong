@@ -26,9 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
 
-<ul class="cart_list product_list_widget <?php echo $args['list_class']; ?>">
+<ul class="cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 
 	<?php if ( ! WC()->cart->is_empty() ) : ?>
+
+		<?php do_action( 'woocommerce_before_mini_cart_contents' ); ?>
 
 		<?php
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
@@ -36,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-					$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
+					$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
 					$thumbnail         = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 					$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
@@ -44,9 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<li class="<?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
 						<?php
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-							'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
+							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
 							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-							__( 'Remove this item', 'understrap' ),
+							__( 'Remove this item', 'woocommerce' ),
 							esc_attr( $product_id ),
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );
@@ -67,9 +69,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}
 		?>
 
+		<?php do_action( 'woocommerce_mini_cart_contents' ); ?>
+
 	<?php else : ?>
 
-		<li class="empty"><?php _e( 'No products in the cart.', 'understrap' ); ?></li>
+		<li class="empty"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></li>
 
 	<?php endif; ?>
 
@@ -77,13 +81,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-	<p class="total"><strong><?php _e( 'Subtotal', 'understrap' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+	<p class="total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 	<p class="buttons">
-		<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="btn btn-outline-primary"><?php _e( 'View Cart', 'understrap' ); ?></a>
-		<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="btn btn-primary"><?php _e( 'Checkout', 'understrap' ); ?></a>
+		<?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?>
 	</p>
 
 <?php endif; ?>

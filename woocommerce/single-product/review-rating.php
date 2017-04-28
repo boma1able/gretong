@@ -1,7 +1,7 @@
 <?php
 /**
  * The template to display the reviewers star rating in reviews
- * Updated for Understrap to maintain Woocommerce 3.0.3 compatability.
+ *
  * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
@@ -28,7 +28,7 @@ if ( $rating && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) { ?
 	<div class="star-rating">
 		<span style="width:<?php echo ( esc_attr( $rating ) / 5 ) * 100; ?>%"><?php
 			/* translators: %s: rating */
-			printf( esc_html__( '%s out of 5', 'understrap' ), '<strong>' . $rating . '</strong>' );
+			printf( esc_html__( '%s out of 5', 'woocommerce' ), '<strong>' . $rating . '</strong>' );
 		?></span>
 	</div>
 

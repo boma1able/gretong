@@ -1,8 +1,10 @@
 <?php
 /**
- * The sidebar containing the main widget area.
+ * The sidebar containing the main widget area
  *
- * @package understrap
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package gretong
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -10,8 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<div class="col-md-4 widget-area" id="secondary" role="complementary">
-
+<aside id="secondary" class="widget-area" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-
-</div><!-- #secondary -->
+</aside><!-- #secondary -->
